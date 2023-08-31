@@ -16,12 +16,16 @@
   }
 }
 
+.container {
+  max-width: 1600px;
+  margin-inline: auto;
+  width: 80%;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin-top: 167px;
+  min-height: calc(100vh - 167px);
+}
+
+.screen-top {
 }
