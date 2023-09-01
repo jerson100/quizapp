@@ -13,13 +13,17 @@ const handler = NextAuth({
   callbacks: {
     signIn: async ({ user, account, credentials, email, profile }) => {
       await connectDB();
+      console.log(user, email, profile);
       let us = await UserModel.findOneAndUpdate(
-        { email: email },
+        { email: user.email },
         {
-          image: user?.image as string,
-          name: user?.name as string,
+          $set: {
+            image: user?.image as string,
+            name: user?.name as string,
+          },
         }
       );
+      console.log(us);
       if (!us) {
         const newUser = new UserModel({
           name: user?.name as string,
@@ -34,15 +38,15 @@ const handler = NextAuth({
       }
       return true;
     },
-    session: async ({ session, token, user }) => {
-      await connectDB();
-      const userDb = await UserModel.findOne({ email: user.email });
-      if (userDb) {
-        session.user.status = userDb._doc.status;
-      }
-      console.log(session);
-      return session;
-    },
+    // session: async ({ session, token, user }) => {
+    //   await connectDB();
+    //   const userDb = await UserModel.findOne({ email: user.email });
+    //   if (userDb) {
+    //     session.user.status = userDb._doc.status;
+    //   }
+    //   console.log(session);
+    //   return session;
+    // },
   },
   //   pages: {
   //     signIn: "/login",
