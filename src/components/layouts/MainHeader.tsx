@@ -20,24 +20,35 @@ const MainHeader = async () => {
           />
           <div className="flex gap-4">
             {session?.user && (
-              <Link href="/profile">
-                <div className="flex flex-col gap-1 items-center">
-                  <div className="w-10 h-10 relative rounded-full overflow-hidden">
-                    <Image
-                      src={session.user.image as string}
-                      alt={session.user.name as string}
-                      title={session.user.name as string}
-                      fill={true}
-                      className="object-cover"
-                    />
-                  </div>
-                  <p className="text-primary font-gordita-bold">
-                    {session.user.name as string}
-                  </p>
-                </div>
-              </Link>
+              <ul className="flex gap-4 items-center">
+                <li>
+                  <Link
+                    href="/admin/questions/new"
+                    className="bg-blue-500 text-white px-5 py-2 rounded-md"
+                  >
+                    Crear Pregunta
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/profile">
+                    <div className="flex flex-col gap-1 items-center">
+                      <div className="w-10 h-10 relative rounded-full overflow-hidden">
+                        <Image
+                          src={session.user.image as string}
+                          alt={session.user.name as string}
+                          title={session.user.name as string}
+                          fill={true}
+                          className="object-cover"
+                        />
+                      </div>
+                      <p className="text-primary font-gordita-bold">
+                        {session.user.name as string}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
             )}
-
             <div className="flex flex-col gap-2 items-end">
               <span className="text-primary font-inter-regular text-[20px]">
                 Auspiciado por:

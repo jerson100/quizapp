@@ -13,7 +13,6 @@ const handler = NextAuth({
   callbacks: {
     signIn: async ({ user, account, credentials, email, profile }) => {
       await connectDB();
-      console.log(user, email, profile);
       let us = await UserModel.findOneAndUpdate(
         { email: user.email },
         {
@@ -23,7 +22,6 @@ const handler = NextAuth({
           },
         }
       );
-      console.log(us);
       if (!us) {
         const newUser = new UserModel({
           name: user?.name as string,

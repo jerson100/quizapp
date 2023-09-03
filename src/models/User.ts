@@ -12,6 +12,11 @@ const UserSchema = new Schema({
     default: "google",
   },
   image: String,
+  typeUser: {
+    type: String,
+    enum: ["admin", "user"],
+    default: "user",
+  },
   status: {
     type: Number,
     default: 1,
