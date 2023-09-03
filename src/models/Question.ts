@@ -1,19 +1,23 @@
+import { QUESTION_TYPES } from "@/configs/consts/question.const";
 import { Schema, model, models } from "mongoose";
 
 const QuestionSchema = new Schema(
   {
-    title: String,
+    questionnarie: {
+      type: Schema.Types.ObjectId,
+      ref: "Questionnaire",
+    },
     ask: String,
     options: [String],
     answers: [String],
-    type: {
+    score: {
       type: Number,
-      enum: ["text", "radio", "checkbox"],
-      default: 1,
+      default: 0,
     },
-    createdBy: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+    type: {
+      type: String,
+      enum: QUESTION_TYPES,
+      default: QUESTION_TYPES.text,
     },
     status: {
       type: Number,
