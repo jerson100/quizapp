@@ -23,9 +23,48 @@
 }
 
 body {
-  margin-top: 167px;
-  min-height: calc(100vh - 167px);
+  margin-top: 100px;
+  min-height: calc(100vh - 100px);
+  background-color: #c5c5c540;
 }
 
 .screen-top {
+}
+
+/* Estilos para la barra de desplazamiento vertical */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    205,
+    35,
+    104,
+    0.6
+  ); /* Color de la barra de desplazamiento */
+  border-radius: 6px; /* Borde redondeado de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(
+    205,
+    35,
+    104,
+    0.3
+  ); /* Color de fondo del área de seguimiento */
+}
+
+/* Estilos para la barra de desplazamiento horizontal */
+::-webkit-scrollbar-horizontal {
+  height: 12px; /* Altura de la barra de desplazamiento horizontal */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgba(
+    205,
+    35,
+    104,
+    0.4
+  ); /* Color de la barra de desplazamiento horizontal */
 }

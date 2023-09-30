@@ -14,6 +14,9 @@ module.exports = {
       },
       colors: {
         primary: "#005CA9",
+        "text-primary": "rgb(205, 35, 104)",
+        "text-secondary": "rgb(255, 205, 27)",
+        bgdark: "rgb(27, 27, 27)",
       },
       fontFamily: {
         "inter-regular": ["var(--font-inter-regular)"],
@@ -23,5 +26,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

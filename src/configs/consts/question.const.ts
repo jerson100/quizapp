@@ -1,5 +1,6 @@
 enum QUESTION_TYPES {
-  text = "text",
+  simple = "simple",
+  complete = "complete",
   radio = "radio",
   checkbox = "checkbox",
 }

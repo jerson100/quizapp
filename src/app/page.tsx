@@ -7,7 +7,7 @@ export default async function Home() {
   if (!session) return <Link href={"/api/auth/signin"}>Sign in</Link>;
   //   console.log(session);
   return (
-    <div className="flex flex-grow bg-red-100 items-center justify-center">
+    <div className="flex flex-grow items-center justify-center">
       <div className="flex flex-col gap-2">
         <p>{session.user?.name}</p>
         <p>{session.user?.email}</p>
